@@ -1,5 +1,6 @@
 ---
-
+import '../styles/global.css';
+const pageTitle = 'Byte Scroll';
 ---
 
 <html lang='en'>
@@ -8,7 +9,7 @@
 		<link rel='icon' type='image/svg+xml' href='/favicon.svg' />
 		<meta name='viewport' content='width=device-width' />
 		<meta name='generator' content={Astro.generator} />
-		<title>Blog Page</title>
+		<title>{pageTitle}</title>
 	</head>
 	<body>
 		<a href='/'>Home</a>
@@ -16,7 +17,7 @@
 		<a href='/about/'>About</a>
 		<br />
 		<a href='/blog/'>Blog</a>
-		<h1>My Blog</h1>
+		<h1>{pageTitle}</h1>
 		<p>This is where i'll be sharing my development journey</p>
 
 		<ul>
