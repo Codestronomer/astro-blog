@@ -1,12 +1,14 @@
 ---
-title: Understanding ISO Weeks and the Importance of the First Thursday
+layout: ../../layouts/markdownPostLayout.astro
+title: 📅 ISO Weeks Explained
 description: "A concise guide to ISO weeks, why they start with the first Thursday, and how they affect date calculations."
 author: "Byte Eon"
-date: 2025-02-15
+pubDate: 2025-02-15
 tags: ["ISO 8601", "week numbering", "date calculations", "calendar systems", "Javascript"]
+image:
+    url: 'https://docs.astro.build/assets/rose.webp'
+    alt: 'The Astro logo on a dark background with a pink glow.'
 ---
-
-# 📅 ISO Weeks Explained
 
 ## 🔹 What is an ISO Week?
 An **ISO week** follows the **ISO 8601** standard, ensuring consistent week numbering. Key rules:

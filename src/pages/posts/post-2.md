@@ -1,5 +1,6 @@
 ---
-title: Introduction to ISO Weeks
+layout: ../../layouts/markdownPostLayout.astro
+title: Understanding ISO Weeks and the First Thursday Rule
 author: Byte - Eon
 description: "Writing about ISO weeks and it's relation to first thursday"
 image:
@@ -8,8 +9,6 @@ image:
 pubDate: 2024-02-15
 tags: ["astro", "blogging", "learning in public", "ISO week", "Javascript"]
 ---
-
-# Understanding ISO Weeks and the First Thursday Rule
 
 ## 📌 What is an ISO Week?
 An **ISO week** follows the **ISO 8601** standard, where:

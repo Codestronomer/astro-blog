@@ -1,5 +1,5 @@
 ---
-import '../styles/global.css';
+import BaseLayout from '../layouts/baseLayout.astro';
 const pageTitle = 'About Me';
 
 const identity = {
@@ -32,53 +32,38 @@ const fontWeight = 'bold';
 const textCase = 'uppercase';
 ---
 
-<html lang='en'>
-	<head>
-		<meta charset='utf-8' />
-		<link rel='icon' type='image/svg+xml' href='/favicon.svg' />
-		<meta name='viewport' content='width=device-width' />
-		<meta name='generator' content={Astro.generator} />
-		<title>{pageTitle}</title>
-		<style define:vars={{ skillColor, fontWeight, textCase }}>
-			.skill {
-				font-weight: var(--fontWeight);
-				color: var(--skillColor);
-				text-transform: var(--textCase);
-			}
-		</style>
-	</head>
-	<body>
-		<a href='/'>Home</a>
-		<br />
-		<a href='/about/'>About</a>
-		<br />
-		<a href='/blog/'>Blog</a>
-		<h1>{pageTitle}</h1>
-		<h2>Here's a sample blog i made with astro</h2>
+<BaseLayout pageTitle={pageTitle}>
+	<style is:global define:vars={{ skillColor, fontWeight, textCase }}>
+		.skill {
+			font-weight: var(--fontWeight);
+			color: var(--skillColor);
+			text-transform: var(--textCase);
+		}
+	</style>
+	<h2>Here's a sample blog i made with astro</h2>
 
-		<p>Here are a few facts about me:</p>
-		<ul>
-			<li>My name is {identity.firstName}.</li>
-			<li>
-				I'm from {identity.country} and i work as a {identity.occupation}.
-			</li>
-			<li>
-				My Hobbies are: {
-					identity.hobbies.map((hobby, index) => {
-						return (
-							<span>
-								{hobby}
-								{index == 1 ? ', and' : index == 2 ? '.' : ', '}
-							</span>
-						);
-					})
-				}
-			</li>
-		</ul>
-		<p>My skills are:</p>
-		<ul>
-			{skills.map((skill) => <li class='skill'>{skill}</li>)}
-		</ul>
-		{!finished && <p>Still under construction... 🛠️</p>}
-	</body>
-</html>
+	<p>Here are a few facts about me:</p>
+	<ul>
+		<li>My name is {identity.firstName}.</li>
+		<li>
+			I'm from {identity.country} and i work as a {identity.occupation}.
+		</li>
+		<li>
+			My Hobbies are: {
+				identity.hobbies.map((hobby, index) => {
+					return (
+						<span>
+							{hobby}
+							{index == 1 ? ', and' : index == 2 ? '.' : ', '}
+						</span>
+					);
+				})
+			}
+		</li>
+	</ul>
+	<p>My skills are:</p>
+	<ul>
+		{skills.map((skill) => <li class='skill'>{skill}</li>)}
+	</ul>
+	{!finished && <p>Still under construction... 🛠️</p>}
+</BaseLayout>

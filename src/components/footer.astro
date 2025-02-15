@@ -1,0 +1,29 @@
+---
+import Social from './social.astro';
+---
+
+<style>
+	footer {
+		display: flex;
+		flex-direction: column;
+	}
+	.socials {
+		display: flex;
+		gap: 1rem;
+		margin-top: 2rem;
+		align-self: center;
+	}
+
+	p {
+		font-weight: bold;
+		align-self: center;
+	}
+</style>
+
+<footer>
+	<p>Social</p>
+	<div class='socials'>
+		<Social platform='Github' username='codestronomer' />
+		<Social platform='Linkedin' username='johnrumide' />
+	</div>
+</footer>
