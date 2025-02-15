@@ -1,5 +1,9 @@
 ---
 const { platform, username } = Astro.props;
+const platforms = {
+	github: 'https://github.com/',
+	linkedlin: 'https://linkedin.com/in/',
+};
 ---
 
 <a href={`https://${platform}.com/${username}`}>{platform}</a>

@@ -1,0 +1,20 @@
+---
+import Tags from '../../components/tags.astro';
+import BaseLayout from '../../layouts/baseLayout.astro';
+const pageTitle = 'Tag Index';
+const allPosts = Object.values(
+	import.meta.glob('../posts/*.md', { eager: true })
+);
+const allTags = [
+	...new Set(
+		allPosts
+			.map((post: any) => post.frontmatter.tags)
+			.flat()
+			.sort()
+	),
+];
+---
+
+<BaseLayout pageTitle={pageTitle}>
+	<Tags tags={allTags} />
+</BaseLayout>
